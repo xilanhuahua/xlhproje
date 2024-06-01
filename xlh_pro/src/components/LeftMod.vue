@@ -2,21 +2,34 @@
  * @Author: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
  * @Date: 2024-05-28 14:38:52
  * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
- * @LastEditTime: 2024-05-28 14:50:37
+ * @LastEditTime: 2024-06-01 16:32:32
  * @FilePath: \xlhproje\xlh_pro\src\components\LeftMod.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
 <!-- 页面的左边版块 -->
 <template>
   <div class="out">
-    <h1>Left</h1>
+    <leftButton :buttonlist="buttonlist"></leftButton>
   </div>
 </template>
 
-<script>
-export default {
-
-}
+<script lang="ts" setup>
+   import leftButton from './leftButton.vue'
+    let buttonlist=[{
+        text:"响应式",
+        id:1
+    },
+    {
+        text:"声明",
+        id:2
+    },
+    {
+        text:"更新",
+        id:3
+    },{
+        text:"计算属性",
+        id:4
+    }]
 </script>
 
 <style>
