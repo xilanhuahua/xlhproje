@@ -1,0 +1,16 @@
+@font-face {
+    /* 重命名字体名 */
+    font-family: '苹方字体';
+    /* 引入字体 */
+    src: url('./苹方字体.ttf');
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    /* 重命名字体名 */
+    font-family: '优设标题黑';
+    /* 引入字体 */
+    src: url('./YouSheBiaoTiHei-2.ttf');
+    font-weight: normal;
+    font-style: normal;
+  }

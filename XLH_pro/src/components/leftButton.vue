@@ -1,97 +1,85 @@
+<!--
+ * @Author: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
+ * @Date: 2024-05-31 09:10:07
+ * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
+ * @LastEditTime: 2024-06-04 21:17:51
+ * @FilePath: \xlhproje\XLH_pro\src\components\leftButton.vue
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%
+-->
 <template>
-<div class="box">
+  <div class="box">
     <div class="box_button_list">
-        <div v-for="item in list.buttonlist" :key="item.id">
-    <button :class="[selectindex===item.id ? 'is_but' : '']"  @click="bu_click($event)">{{ item.text }}</button>
-        </div>
+      <button class="firstbutton">{{ firstbutton?[0].text}}</button>
+      <div v-for="item in buttonlist" :key="item.id">
+        <button :class="[selectindex === item.id ? 'isbut' : '']" @click="bu_click(item, $event)">{{ item.text}}</button>
+      </div>
     </div>
-</div>    
+  </div>
 </template>
 
-<script lang="ts" setup>
-import {defineProps, ref} from 'vue'
-interface button_face{
-    id: number;
+
+<script lang="ts" setup name="leftbtton">
+import { defineProps, ref } from 'vue'
+interface button_face {
+  id: number;
   text: string;
 }
- let list=defineProps({
-    buttonlist: {
-    type:Array as ()=>button_face[],
+const { buttonlist, firstbutton } = defineProps({
+  buttonlist: {
+    type: Array as () => button_face[],
     required: true,
     default: () => []
   },
- })
- let selectindex=ref(0)
-// console.log(list[0])
-// methods: {
-//     clickEvent(e) {
- 
-//     #获取你当前点击的元素
-//     e.target 
- 
-//     #获得你绑定事件的元素
-//     e.currentTarget 
- 
-//     #获得点击元素的前一个元素
-//     e.currentTarget.previousElementSibling.innerHTML
- 
-//     #获得点击元素中的class属性
-//     e.currentTarget.className
- 
-//     #获得点击元素的第一个子元素
-//     e.currentTarget.firstElementChild
- 
-//     # 获得点击元素的下一个元素
-//     e.currentTarget.nextElementSibling
- 
-//     # 获得点击元素中id为string的元素
-//     e.currentTarget.getElementById("string")
- 
-//     # 获得点击元素的string属性
-//     e.currentTarget.getAttributeNode('string')
- 
-//     # 获得点击元素的父级元素
-//     e.currentTarget.parentElement
- 
-//     # 获得点击元素的前一个元素的第一个子元素的HTML值
-//     e.currentTarget.previousElementSibling.firstElementChild.innerHTML
- 
-//     }
-//   },
-// function bu_click(item:button_face){
-//  selectindex.value=item.id
-//  console.log('select的值是'+selectindex.value)
-// }
-function bu_click(e:any){
-    e.target.style.color='pink'
+  firstbutton:{
+    type:Array as () => button_face[]
+  }
+});
+let selectindex = ref(0)
+
+function bu_click(item: button_face, e: any) {
+  selectindex.value = item.id
+  console.log('点击的按钮的 id 是：', item.id)
+  e.target.class = 'isbut'
 }
 </script>
 
 <style lang="less">
-.box_button_list{
-    display: flex;
-    flex-flow: column;
-    button{
-        margin-left: 1vh;
-        margin-right: 1vh; ;
-        height: 5vh;
-        border-style: none;
-        text-align: left;
-        border-radius: 2px;
-        padding-left: 2vh;
-        font-size: 15px;
-        font-weight: 700;
-        color: rgb(136, 140, 147);
-    }
-    button:hover{
-        cursor:pointer;
-        color: rgb(255, 255, 255);
-        background-color:rgb(28, 38, 52);
-    }
-    font-family:'Courier New', Courier, monospace;
-    
-}
-.isbut{
+.box_button_list {
+  display: flex;
+  flex-flow: column;
+  button {
+    margin-left: 1vh;
+    margin-right: 1vh;
+    height: 5vh;
+    width: 90%;
+    border-style: none;
+    text-align: left;
+    border-radius: 2px;
+    padding-left: 2vh;
+    font-size: 15px;
+    font-weight: 700;
+    color: rgb(136, 140, 147);
+  }
+
+  button:hover {
+    cursor: pointer;
     color: rgb(255, 255, 255);
+    background-color: rgb(28, 38, 52);
+  }
+
+  font-family:'Courier New',
+  Courier,
+  monospace;
+
+}
+
+button.isbut {
+  background-color: rgb(28, 38, 52);
+  color: rgb(255, 255, 255);
+}
+
+button.firstbutton {
+  background-color: rgb(28, 38, 52);
+  color: #fff;
 }
 </style>

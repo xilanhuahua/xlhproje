@@ -1,0 +1,102 @@
+<!--
+ * @Author: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
+ * @Date: 2024-06-04 14:05:07
+ * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
+ * @LastEditTime: 2024-06-04 15:12:59
+ * @FilePath: \xlhproje\鼠标跟踪导航条.html
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1234567890abcdefghijklmnopqrstuvwxyz" crossorigin="anonymous" />
+</head>
+<body>
+    <div class="shell">
+        <input type="text" placeholder="Search">
+        <a href="#">
+            <i class="fa fa-hand-o-right"></i>
+            <i class="fa fa-search"></i>
+        </a></input>
+    </div>
+</body>
+<script>
+    import '@/assets/fonts/font.css'
+</script>
+<style>
+    *{
+        outline: none;
+        padding: 0;
+        margin: 0;
+        text-decoration: none;
+    }
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #ffdcdc;
+    }
+    .shell{
+        position: relative;
+        width: 1000px;
+        padding: 33px;
+        background-color: #ff7575;
+        border-radius: 30px;
+        box-shadow: 0 10px 50px #ff7575,0 0 0 20px #fff;
+    }
+    .shell input{
+        width: 80%;
+        height: 100px;
+        color: #fff;
+        font: 300 80px '优设标题黑';
+        border: 0;
+        background-color: transparent;
+    }
+    .shell input::placeholder{
+        color: #8f36367e;
+    }
+    .shell a{
+        display: flex;
+        font-size: 120px;
+        position: absolute;
+        right: 60px;
+        top: 10px;
+        color: #fff;
+        width: 250px;
+        height: 150px;
+        
+    }
+    .shell a .fa{
+        margin: 10px 28px;
+        transition: .3s;
+
+    }
+    .shell a .fa-hand-o-right{
+        transform: translateX(-100px);
+    }
+    .shell a .fa-search{
+        transform: translateX(-80px);
+        opacity: 1;
+    }
+    .shell a:hover .fa-search{
+        transform: translateX(0);
+        opacity: 0;
+    }
+    .shell a:hover .fa-hand-o-right{
+        transform: translateX(110px);
+        opacity: 1;
+    }
+    .shell a::before{
+        content: 'Go';
+        position: absolute;
+        display: block;
+        font-size: 50px;
+        background-color: #ff7575;
+        padding: 5px 30px;
+    }
+</style>
+</html>
