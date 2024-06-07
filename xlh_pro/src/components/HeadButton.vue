@@ -20,17 +20,18 @@
 <script setup lang="ts">
 declare var require: any
 import { reactive, ref } from "vue";
+import emitter from "../utils/emitter";
 let ischeck=ref(0);
 let StringMod=reactive([
     {
         nametext: "Vue3",
         id: 1,
-        imgsrc:require('../assets//React.png'),
+        imgsrc:require('../assets/Vue.png'),
         isbut:false
     },{
         nametext : "Vue2",
         id : 2,
-        imgsrc: require('../assets/连衣裙.png'),
+        imgsrc: require('../assets/Vue.png'),
         isbut:false
     },{
         nametext : "Svelte",
@@ -76,6 +77,7 @@ let StringMod=reactive([
 ])
 function printimg(e:any,item:any){
   item.isbut=!item.isbut  
+  emitter.emit('Sendheadtext',(item))
 }
 
 </script>

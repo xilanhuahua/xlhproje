@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div class="box">
+            <div class="headtitle"> <img src="/计算器.png" alt="" srcset="">计算器</div>
+            <div class="input_list">
+                	<input id="numone"  type="text" placeholder="数字一"/>
+                	<input id="numtwo"  type="text" placeholder="数字二"/>
+                	<input id="numthree"  type="text" placeholder="结果"/>
+            </div>
+			<div class="button_list">
+				<button  id="buon"  class="button_one">加</button>
+				<button  id="buon_2"  class="button_two">减</button>
+				<button  id="buon_3"  class="button_three">乘</button>
+				<button  id="buon_4"  class="button_four">除</button>
+			</div>
+		</div>
+	</body>
+</html>
+<style>
+    *{
+        font-family: 'Courier New', Courier, monospace;
+        font-weight: 700;
+        margin: 0;
+        padding: 0;
+    }
+	.box{
+        border-radius: 10px;
+        box-shadow: 2px 3px 2px 1px #000;
+        background-color:pink;
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 35%;
+        left: 35%;
+        border-style:  1px #000 solid;
+    }
+    button{
+        margin: 10px;
+        border-radius: 10px;
+        border-style: none;
+        width: 7vh;
+        height: 3vh;
+        cursor: pointer;
+    }
+    input{
+        height: 4vh;
+        border-radius: 10px;
+        margin: 10px;
+    }
+    img{
+        width: 4vh;
+        height: 4vh;
+    }
+    .headtitle{
+        padding: 5px;
+    }
+    .button_list{
+        display:flex;
+    }
+    .input_list{
+        display: flex;
+        flex-direction: column;
+    }
+    .button_one{
+        background-color: #85FFBD;
+        background-image: linear-gradient(45deg, #85FFBD 0%, #FFFB7D 100%);
+
+    }
+    .button_two{
+        background-color: #0093E9;
+        background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+    }
+    .button_three{
+    background-color: #4158D0;
+    background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+    }
+    .button_four{
+    background-color: #D9AFD9;
+    background-image: linear-gradient(0deg, #D9AFD9 0%, #97D9E1 100%);
+    }
+</style>
+<script>
+    let numone=document.getElementById('numone')
+    let numtwo=document.getElementById('numtwo')
+    let numthree=document.getElementById('numthree')
+    document.getElementById('buon').addEventListener("click",()=>{
+       this.numthree.value=  parseInt( this.numone.value) +  parseInt(this.numtwo.value) ;
+       console.log( this.numthree.value)
+    })
+	
+    document.getElementById('buon_2').addEventListener("click",()=>{
+       this.numthree.value=  parseInt( this.numone.value) -  parseInt(this.numtwo.value) ;
+       console.log( this.numthree.value)
+    })
+
+    document.getElementById('buon_3').addEventListener("click",()=>{
+       this.numthree.value=  parseInt( this.numone.value) *  parseInt(this.numtwo.value) ;
+       console.log( this.numthree.value)
+    })
+
+
+    document.getElementById('buon_4').addEventListener("click",(numone,numtwo,numthree)=>{
+       this.numthree.value=  parseInt( this.numone.value) /  parseInt(this.numtwo.value) ;
+       console.log( this.numthree.value)
+    })
+</script>
